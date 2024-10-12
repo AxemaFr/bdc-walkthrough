@@ -61,8 +61,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     // make sure to unsubscribe on ngDestroy
     this.bdcWalkService.changes.subscribe(() => {
-      // get the value of a task
-      const taskCompleted = this.bdcWalkService.getTaskCompleted('taskCreateApp');
+        // get the value of a task
+        const taskCompleted = this.bdcWalkService.getTaskCompleted('taskCreateApp');
     });
   }
 
@@ -89,7 +89,7 @@ completed and it won't show up again.
 
 ```angular2html
 <bdc-walk-popup #taskDeleteApp name="taskDeleteApp"
-                [mustCompleted]="{taskCreateApp: true}">
+  [mustCompleted]="{taskCreateApp: true}">
   Click to delete the App
 </bdc-walk-popup>
 ```
@@ -128,12 +128,12 @@ template reference.
 
 ```angular2html
 <bdc-walk-popup #taskCreateApp name="taskCreateApp"
-                [onCloseCompleteTask]="{taskCreateApp: {id: 1, name: 'amazing app'}}">
+  [onCloseCompleteTask]="{taskCreateApp: {id: 1, name: 'amazing app'}}">
   Click to create the App
 </bdc-walk-popup>
 
 <bdc-walk-popup #taskDeleteApp name="taskDeleteApp"
-                [mustCompleted]="{taskCreateApp: true}">
+  [mustCompleted]="{taskCreateApp: true}">
   Click to delete the App {{taskDeleteApp.getValue('taskCreateApp').name }}
 </bdc-walk-popup>
 ```
